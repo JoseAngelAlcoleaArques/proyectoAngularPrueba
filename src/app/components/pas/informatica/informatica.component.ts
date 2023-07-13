@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {trabajadorDto} from '../../../types/trabajador-dto';
+import {TrabajadoresService} from '../../../services/trabajadores-service';
 
 @Component({
   selector: 'app-informatica',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformaticaComponent implements OnInit {
 
-  constructor() { }
+  trabajadoresInformatica: trabajadorDto[] = [];
+  nombre = 'INFORMATICA';
+  telefono = '654198754';
+
+  constructor(private trabajadoresService: TrabajadoresService) { }
 
   ngOnInit() {
+    this.trabajadoresInformatica = this.trabajadoresService.getTrabajadoresByDepartamento('INFORMATICA');
   }
 
 }

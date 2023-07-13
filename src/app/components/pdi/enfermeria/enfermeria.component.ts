@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {trabajadorDto} from '../../../types/trabajador-dto';
+import {TrabajadoresService} from '../../../services/trabajadores-service';
 
 @Component({
   selector: 'app-enfermeria',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnfermeriaComponent implements OnInit {
 
-  constructor() { }
+  trabajadoresEnfermeria: trabajadorDto[] = [];
+  nombre = 'ENFERMERIA';
+  telefono = '32132112';
+
+  constructor(private trabajadoresService: TrabajadoresService) { }
 
   ngOnInit() {
+    this.trabajadoresEnfermeria = this.trabajadoresService.getTrabajadoresByDepartamento('ENFERMERIA');
   }
 
 }
