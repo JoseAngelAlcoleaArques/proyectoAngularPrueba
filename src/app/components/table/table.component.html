@@ -1,0 +1,21 @@
+<h1>{{ nombre }}</h1>
+<h2>{{ telefono }}</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Departamento</th>
+      <th scope="col">Grupo de departamento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let trabajador of trabajadores">
+      <td>{{ trabajador.nombre }}</td>
+      <td>{{ trabajador.correo }}</td>
+      <td>{{ trabajador.departamento }}</td>
+      <td>{{ trabajador.grupoDepartamento }}</td>
+    </tr>
+  </tbody>
+</table>
