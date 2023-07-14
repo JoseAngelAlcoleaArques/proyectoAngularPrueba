@@ -32,7 +32,7 @@ const APP_ROUTES: Routes = [
       { path: 'cafeteria', component: CafeteriaComponent},
       { path: 'reprog', component: ReprogComponent},
       { path: 'secretaria', component: SecretariaComponent},
-      { path: '**', pathMatch: 'full', redirectTo: 'cafeteria'}
+      { path: '**', pathMatch: 'full', redirectTo: 'servicios-home'}
     ]},
   { path: 'formulario', component: TrabajadorformComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'pas'}
