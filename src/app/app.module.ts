@@ -16,14 +16,18 @@ import { CafeteriaComponent } from './components/servicios/cafeteria/cafeteria.c
 import { ReprogComponent } from './components/servicios/reprog/reprog.component';
 import { SecretariaComponent } from './components/servicios/secretaria/secretaria.component';
 import { TableComponent } from './components/table/table.component';
+import { PdiHomeComponent } from './components/pdi/pdi-home/pdi-home.component';
+import { PasHomeComponent } from './components/pas/pas-home/pas-home.component';
+import { TrabajadorformComponent } from './components/trabajadorform/trabajadorform.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // rutas
 import { APP_ROUTING } from './app.routes';
 
 // services
 import { TrabajadoresService } from './services/trabajadores-service';
-import { PdiHomeComponent } from './components/pdi/pdi-home/pdi-home.component';
-import { PasHomeComponent } from './components/pas/pas-home/pas-home.component';
+import { ServiciosHomeComponent } from './components/servicios/servicios-home/servicios-home.component';
+
 
 @NgModule({
   declarations: [
@@ -41,22 +45,19 @@ import { PasHomeComponent } from './components/pas/pas-home/pas-home.component';
     SecretariaComponent,
     TableComponent,
     PdiHomeComponent,
-    PasHomeComponent
+    PasHomeComponent,
+    TrabajadorformComponent,
+    ServiciosHomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    APP_ROUTING
+    APP_ROUTING,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
-    TrabajadoresService,
-    AtencionAlUsuarioComponent,
-    InformaticaComponent,
-    PolitecnicaComponent,
-    EnfermeriaComponent,
-    CafeteriaComponent,
-    ReprogComponent,
-    SecretariaComponent
+    TrabajadoresService
   ],
   bootstrap: [AppComponent]
 })

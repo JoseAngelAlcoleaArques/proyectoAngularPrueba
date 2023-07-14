@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {trabajadorDto} from '../types/trabajador-dto';
 
 @Injectable({
@@ -7,25 +7,6 @@ import {trabajadorDto} from '../types/trabajador-dto';
 export class TrabajadoresService {
 
   private _trabajadores: trabajadorDto[] = [];
-  private _nombre: string;
-  private _telefono: string;
-
-
-  get nombre(): string {
-    return this._nombre;
-  }
-
-  set nombre(value: string) {
-    this._nombre = value;
-  }
-
-  get telefono(): string {
-    return this._telefono;
-  }
-
-  set telefono(value: string) {
-    this._telefono = value;
-  }
 
   setTrabajadores(trabajadores: trabajadorDto[]): void {
     this._trabajadores = trabajadores;
@@ -53,6 +34,11 @@ export class TrabajadoresService {
       }
     }
     return trabajadoresEncontrados;
+  }
+
+  addTrabajador(trabajador: trabajadorDto): trabajadorDto{
+    this._trabajadores.push(trabajador);
+    return trabajador;
   }
 
   constructor() { }

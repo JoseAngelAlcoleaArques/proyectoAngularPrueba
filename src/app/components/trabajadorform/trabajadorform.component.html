@@ -1,0 +1,25 @@
+<form [formGroup]="trabajadorForm">
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input formControlName="nombre" class="form-control" id="nombre" required="required">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input formControlName="correo" class="form-control" id="email" required="required">
+  </div>
+
+  <div class="mb-3">
+    <label for="grupoDepartamento" class="form-label">Grupo de departamentos</label>
+    <select formControlName="grupoDepartamentos" class="form-control" id="grupoDepartamento" name="grupoDepartamento" required="required" [(ngModel)]="grupoSeleccionado" (change)="modificarDepartamentos(grupoSeleccionado)">
+      <option *ngFor="let grupo of gruposDepartamentos" [value]="grupo">{{ grupo }}</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="departamento" class="form-label">Departamento</label>
+    <select formControlName="departamento" class="form-control" id="departamento" name="departamento" required="required" [(ngModel)]="departamentoSeleccionado" (change)="modificarGruposDeDepartamento(departamentoSeleccionado)">
+      <option *ngFor="let departamento of departamentos" [value]="departamento">{{ departamento }}</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="trabajadorForm.invalid" (click)="guardarTrabajador(trabajadorForm.value)" class="btn btn-primary">Añadir</button>
+</form>

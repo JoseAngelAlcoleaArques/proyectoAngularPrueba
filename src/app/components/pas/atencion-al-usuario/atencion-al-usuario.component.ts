@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {trabajadorDto} from '../../../types/trabajador-dto';
 import {TrabajadoresService} from '../../../services/trabajadores-service';
+import {departamentosEnum} from '../../../enum/departamentos-enum';
 
 @Component({
   selector: 'app-atencion-al-usuario',
@@ -16,7 +17,7 @@ export class AtencionAlUsuarioComponent implements OnInit {
   constructor(private trabajadoresService: TrabajadoresService) {}
 
   ngOnInit() {
-    this.trabajadoresAtencionAlUsuario = this.trabajadoresService.getTrabajadoresByDepartamento('ATENCION AL USUARIO');
+    this.trabajadoresAtencionAlUsuario = this.trabajadoresService.getTrabajadoresByDepartamento(departamentosEnum.ATENCIONALUSUARIO);
   }
 
 }
