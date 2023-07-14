@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TrabajadoresService} from '../../../services/trabajadores-service';
 import {trabajadorDto} from '../../../types/trabajador-dto';
+import {grupoDepartamentoEnum} from '../../../enum/grupo-departamento-enum';
 
 @Component({
   selector: 'app-pdi-home',
@@ -16,7 +17,7 @@ export class PdiHomeComponent implements OnInit {
   constructor(private trabajadoresService: TrabajadoresService) { }
 
   ngOnInit() {
-    this.trabajadoresPdi = this.trabajadoresService.getTrabajadoresByGrupoDepartamento('PDI');
+    this.trabajadoresPdi = this.trabajadoresService.getTrabajadoresByGrupoDepartamento(grupoDepartamentoEnum.PDI);
   }
 
 }

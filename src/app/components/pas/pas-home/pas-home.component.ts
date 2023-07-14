@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {trabajadorDto} from '../../../types/trabajador-dto';
 import {TrabajadoresService} from '../../../services/trabajadores-service';
+import {grupoDepartamentoEnum} from '../../../enum/grupo-departamento-enum';
 
 @Component({
   selector: 'app-pas-home',
@@ -16,7 +17,7 @@ export class PasHomeComponent implements OnInit {
   constructor(private trabajadoresService: TrabajadoresService) { }
 
   ngOnInit() {
-    this.trabajadoresPas = this.trabajadoresService.getTrabajadoresByGrupoDepartamento('PAS');
+    this.trabajadoresPas = this.trabajadoresService.getTrabajadoresByGrupoDepartamento(grupoDepartamentoEnum.PAS);
   }
 
 }

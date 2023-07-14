@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {trabajadorDto} from '../../../types/trabajador-dto';
 import {TrabajadoresService} from '../../../services/trabajadores-service';
+import {departamentosEnum} from '../../../enum/departamentos-enum';
 
 @Component({
   selector: 'app-politecnica',
@@ -16,7 +17,7 @@ export class PolitecnicaComponent implements OnInit {
   constructor(private trabajadoresService: TrabajadoresService) { }
 
   ngOnInit() {
-    this.trabajadoresPolitecnica = this.trabajadoresService.getTrabajadoresByDepartamento('POLITECNICA');
+    this.trabajadoresPolitecnica = this.trabajadoresService.getTrabajadoresByDepartamento(departamentosEnum.POLITECNICA);
   }
 
 }
